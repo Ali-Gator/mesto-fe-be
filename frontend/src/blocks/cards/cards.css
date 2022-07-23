@@ -1,0 +1,20 @@
+/* cards' style */
+
+.cards {
+    max-width: 282px;
+    min-height: calc(100vh - 356px);
+  }
+  
+  @media screen and (min-width: 600px) {
+    .cards {
+      max-width: 590px;
+      min-height: calc(100vh - 392px);
+    }
+  }
+  
+  @media screen and (min-width: 900px) {
+    .cards {
+      max-width: 880px;
+      min-height: calc(100vh - 481px);
+    }
+  }

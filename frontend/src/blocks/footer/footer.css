@@ -1,0 +1,17 @@
+/* footer's style */
+
+.footer {
+    max-width: 282px;
+  }
+  
+  @media screen and (min-width: 600px) {
+    .footer {
+      min-width: 590px;
+    }
+  }
+  
+  @media screen and (min-width: 900px) {
+    .footer {
+      min-width: 880px;
+    }
+  }

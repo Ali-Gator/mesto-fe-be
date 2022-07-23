@@ -1,0 +1,15 @@
+.profile__name-wrapper {
+    margin-top: 26px;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    column-gap: 10px;
+  }
+  
+  @media screen and (min-width: 600px) {
+    .profile__name-wrapper {
+      margin-top: 0;
+      justify-self: start;
+      align-self: end;
+    }
+  }

@@ -1,0 +1,21 @@
+/* header's styles */
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 260px;
+    border-bottom: 1px solid rgba(84, 84, 84, 0.7);
+}
+
+@media screen and (min-width: 600px) {
+    .header {
+        max-width: 360px;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .header {
+        max-width: 880px;
+    }
+}

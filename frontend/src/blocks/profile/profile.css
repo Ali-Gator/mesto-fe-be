@@ -1,0 +1,22 @@
+/* profile's styles */
+
+.profile {
+    max-width: 282px;
+  }
+  
+  @media screen and (min-width: 600px) {
+    .profile {
+      max-width: 590px;
+      display: grid;
+      grid-template-columns: 120px 1fr 150px;
+      column-gap: 30px;
+      justify-items: center;
+      align-items: center;
+    }
+  }
+  
+  @media screen and (min-width: 900px) {
+    .profile {
+      max-width: 880px;
+    }
+  }

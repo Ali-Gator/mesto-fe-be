@@ -1,0 +1,7 @@
+.auth__input-wrapper {
+    width: 100%;
+}
+
+.auth__input-wrapper:not(:first-of-type) {
+    margin: 30px 0 0;
+}

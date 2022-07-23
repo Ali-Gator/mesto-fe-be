@@ -1,0 +1,47 @@
+.profile__image-button {
+    margin: 0 auto;
+    padding: 0;
+    display: block;
+    background: none;
+    border: none;
+    border-radius: 50%;
+    position: relative;
+    transition: all 0.5s ease-out;
+    text-align: center;
+}
+
+.profile__image-button:hover {
+    cursor: pointer;
+}
+
+.profile__image-button:hover::before {
+    content: '';
+    background-image: url(../../../images/icon-edit.svg);
+    background-size: 26px 26px;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.profile__image-button:active::before {
+    content: '';
+    background-image: url(../../../images/icon-edit.svg);
+    transform: scale(0.8);
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+@media screen and (min-width: 600px) {
+    .profile__image-button {
+        grid-row: 1 / span 2;
+    }
+}

@@ -1,0 +1,14 @@
+.popup__container_type_picture {
+  width: auto;
+  padding: 0;
+  background-color: transparent;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+@media screen and (min-width: 600px) {
+  .popup__container_type_picture {
+    width: auto;
+    padding: 0;
+  }
+}
