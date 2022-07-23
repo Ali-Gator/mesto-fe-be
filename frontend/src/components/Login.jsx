@@ -22,7 +22,7 @@ const Login = ({onLogin, history}) => {
           setEmail('');
           setPassword('');
           localStorage.setItem('token', data.token);
-          onLogin(true);
+          onLogin(true, data.token);
           history.push('/');
         }
       })

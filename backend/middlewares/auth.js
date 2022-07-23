@@ -6,7 +6,8 @@ const { NODE_ENV, JWT_SECRET } = process.env;
 
 module.exports = (req, res, next) => {
   try {
-    const token = req.cookies.jwt;
+    // const token = req.cookies.jwt;
+    const token = req.headers.authorization.replace('Bearer ', '');
     if (!token) throw new UnauthorizedError(UNAUTHORIZED_MESSAGE);
     jwt.verify(
       token,

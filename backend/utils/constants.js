@@ -1,5 +1,5 @@
 module.exports = {
-  DEFAULT_PORT: 3000,
+  DEFAULT_PORT: 3001,
   SECRET_KEY: 'vasyapetrov',
   BAD_REQUEST_ERROR: 400,
   BAD_REQUEST_MESSAGE: 'Bad request. Check request data and try again',
@@ -16,7 +16,7 @@ module.exports = {
   // eslint-disable-next-line no-useless-escape
   URL_REGEXP: /^https?:\/\/[www\.]?[\dA-Za-z\-\._~:\/\?#\[\]@!\$&'\(\)\*\+,;=]+/i,
   ALLOWED_CORS: [
-    'localhost:3000',
+    'http://localhost:3000',
   ],
   DEFAULT_ALLOWED_METHODS: 'GET,HEAD,PUT,PATCH,POST,DELETE',
 };

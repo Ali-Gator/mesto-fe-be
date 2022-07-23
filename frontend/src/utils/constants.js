@@ -1,7 +1,8 @@
 export const apiData = {
-    baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-39',
+    baseUrl: `${window.location.protocol}${process.env.REACT_APP_API_URL || '//localhost:3001'}`,
     headers: {
-        authorization: '914b7268-7449-4876-82b7-f51aacf67523',
+        'Authorization': `Bearer ${localStorage.getItem('token')}`,
         'Content-Type': 'application/json'
-    }
+    },
+    credentials: 'include',
 };

@@ -1,4 +1,4 @@
-const BASE_URL = 'https://auth.nomoreparties.co';
+const BASE_URL = `${window.location.protocol}${process.env.REACT_APP_API_URL || '//localhost:3001'}`
 
 export function register(email, password) {
   return fetch(`${BASE_URL}/signup`, {
@@ -26,6 +26,7 @@ export function getContent(token) {
     headers: {
       'Content-Type': 'application/json',
       'Authorization': `Bearer ${token}`
-    }
+    },
+    credentials: 'include',
   }).then(res => res.ok ? res.json() : Promise.reject(`Ошибка ${res.status}`));
 }

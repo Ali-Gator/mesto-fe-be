@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const mongoose = require('mongoose');
 const { errors } = require('celebrate');
+const cors = require('cors');
 const { DEFAULT_PORT } = require('./utils/constants');
 const users = require('./routes/users');
 const cards = require('./routes/card');
@@ -11,7 +12,7 @@ const signin = require('./routes/signin');
 const signup = require('./routes/signup');
 const any = require('./routes/any');
 const auth = require('./middlewares/auth');
-const cors = require('./middlewares/cors');
+const corsMW = require('./middlewares/cors');
 const errorHandler = require('./errors/error-handler');
 // const handleUncaughtException = require('./errors/uncaught-exception');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
@@ -30,7 +31,17 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 app.use(requestLogger);
-app.use(cors);
+
+const options = {
+  origin: [
+    'http://localhost:3000',
+    'https://mesto-ali.nomoredomains.xyz',
+    'http://mesto-ali.nomoredomains.xyz',
+  ],
+  credentials: true,
+};
+app.use('*', cors(options));
+app.use(corsMW);
 
 // todo delete after test
 app.get('/crash-test', () => {
