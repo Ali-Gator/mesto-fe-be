@@ -1,5 +1,5 @@
 module.exports = {
-  DEFAULT_PORT: 3001,
+  DEFAULT_PORT: 3000,
   SECRET_KEY: 'vasyapetrov',
   BAD_REQUEST_ERROR: 400,
   BAD_REQUEST_MESSAGE: 'Bad request. Check request data and try again',
@@ -17,6 +17,8 @@ module.exports = {
   URL_REGEXP: /^https?:\/\/[www\.]?[\dA-Za-z\-\._~:\/\?#\[\]@!\$&'\(\)\*\+,;=]+/i,
   ALLOWED_CORS: [
     'http://localhost:3000',
+    'http://api.mesto-ali.nomoredomains.xyz',
+    'https://api.mesto-ali.nomoredomains.xyz',
   ],
   DEFAULT_ALLOWED_METHODS: 'GET,HEAD,PUT,PATCH,POST,DELETE',
 };
