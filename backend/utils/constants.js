@@ -17,8 +17,8 @@ module.exports = {
   URL_REGEXP: /^https?:\/\/[www\.]?[\dA-Za-z\-\._~:\/\?#\[\]@!\$&'\(\)\*\+,;=]+/i,
   ALLOWED_CORS: [
     'http://localhost:3000',
-    'http://api.mesto-ali.nomoredomains.xyz',
-    'https://api.mesto-ali.nomoredomains.xyz',
+    'http://mesto-ali.nomoredomains.xyz',
+    'https://mesto-ali.nomoredomains.xyz',
   ],
   DEFAULT_ALLOWED_METHODS: 'GET,HEAD,PUT,PATCH,POST,DELETE',
 };
