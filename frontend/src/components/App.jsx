@@ -1,7 +1,6 @@
 import '../index.css';
 import React from 'react';
 import { Route, Switch, useHistory } from 'react-router-dom';
-import api from '../utils/api';
 import { CurrentUserContext } from '../contexts/CurrentUserContext';
 import Header from './Header';
 import Main from './Main';
@@ -15,6 +14,8 @@ import ProtectedRoute from './ProtectedRoute';
 import Login from './Login';
 import Register from './Register';
 import InfoTooltip from './InfoTooltip';
+import Api from '../utils/api';
+import { apiData } from '../utils/constants';
 import { getContent } from '../utils/auth';
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
   const [cardToDelete, setCardToDelete] = React.useState(null);
   const [loggedIn, setLoggedIn] = React.useState(false);
   const [token, setToken] = React.useState(localStorage.getItem('token'));
+  const [api, setApi] = React.useState(null);
   const history = useHistory();
 
   React.useEffect(() => {
@@ -51,6 +53,8 @@ function App() {
 
   React.useEffect(() => {
     if (loggedIn) {
+      const api = new Api(apiData);
+      setApi(api);
       Promise.all([api.getInitialUser(), api.getInitialCards()])
         .then(([user, cards]) => {
           setCurrentUser(prev => {

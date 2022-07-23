@@ -1,5 +1,6 @@
+const { NODE_ENV } = process.env;
 module.exports = {
-  DEFAULT_PORT: 3000,
+  DEFAULT_PORT: NODE_ENV === 'production' ? 3000 : 3001,
   SECRET_KEY: 'vasyapetrov',
   BAD_REQUEST_ERROR: 400,
   BAD_REQUEST_MESSAGE: 'Bad request. Check request data and try again',

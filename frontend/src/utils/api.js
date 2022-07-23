@@ -1,5 +1,3 @@
-import { apiData } from './constants';
-
 class Api {
   constructor({baseUrl, headers, credentials}) {
     this._baseUrl = baseUrl;
@@ -80,6 +78,4 @@ class Api {
   }
 }
 
-const api = new Api(apiData);
-
-export default api;
+export default Api;
