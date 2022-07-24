@@ -1,12 +1,7 @@
-const { ALLOWED_CORS, DEFAULT_ALLOWED_METHODS } = require('../utils/constants');
+const { ALLOWED_CORS } = require('../utils/constants');
 
 module.exports = (req, res, next) => {
-  const { headers: { origin }, method } = req;
-  // if (method === 'OPTIONS') {
-  //   const reqHeaders = req.headers['access-control-request-headers'];
-  //   res.header('Access-Control-Allow-Methods', DEFAULT_ALLOWED_METHODS);
-  //   res.header('Access-Control-Allow-Headers', reqHeaders);
-  // }
+  const { headers: { origin } } = req;
   if (ALLOWED_CORS.includes(origin)) {
     res.header('Access-Control-Allow-Origin', origin);
     res.header('Access-Control-Allow-Credentials', 'true');

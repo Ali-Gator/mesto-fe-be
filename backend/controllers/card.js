@@ -1,7 +1,8 @@
 const Card = require('../models/card');
-const { NOT_FOUND_MESSAGE, FORBIDDEN_MESSAGE } = require('../utils/constants');
+const { NOT_FOUND_MESSAGE, FORBIDDEN_MESSAGE, BAD_REQUEST_MESSAGE } = require('../utils/constants');
 const NotFoundError = require('../errors/not-found-err');
 const ForbiddenError = require('../errors/forbidden');
+const BadRequestError = require('../errors/bad-request');
 
 module.exports.getCards = async (req, res, next) => {
   try {
@@ -20,7 +21,11 @@ module.exports.postCard = async (req, res, next) => {
     const card = await Card.create({ name, link, owner });
     res.send(card);
   } catch (err) {
-    next(err);
+    if (err.name === 'ValidationError') {
+      next(new BadRequestError(BAD_REQUEST_MESSAGE));
+    } else {
+      next(err);
+    }
   }
 };
 

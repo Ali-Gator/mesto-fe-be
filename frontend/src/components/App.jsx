@@ -53,9 +53,10 @@ function App() {
 
   React.useEffect(() => {
     if (loggedIn) {
-      const api = new Api(apiData);
-      setApi(api);
-      Promise.all([api.getInitialUser(), api.getInitialCards()])
+      const apiMethods = new Api(apiData);
+      console.log(apiData);
+      setApi(apiMethods);
+      Promise.all([apiMethods.getInitialUser(), apiMethods.getInitialCards()])
         .then(([user, cards]) => {
           setCurrentUser(prev => {
             return {...prev, ...user};

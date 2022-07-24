@@ -1,7 +1,10 @@
 class Api {
   constructor({baseUrl, headers, credentials}) {
     this._baseUrl = baseUrl;
-    this._headers = headers;
+    this._headers = {
+      ...headers,
+      'Authorization': `Bearer ${localStorage.getItem('token')}`,
+    };
     this._credentials = credentials;
   }
 
