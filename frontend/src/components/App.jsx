@@ -54,7 +54,6 @@ function App() {
   React.useEffect(() => {
     if (loggedIn) {
       const apiMethods = new Api(apiData);
-      console.log(apiData);
       setApi(apiMethods);
       Promise.all([apiMethods.getInitialUser(), apiMethods.getInitialCards()])
         .then(([user, cards]) => {
