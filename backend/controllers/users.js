@@ -69,7 +69,7 @@ module.exports.patchProfile = async (req, res, next) => {
     const userId = req.user._id;
 
     const user = await User.findOneAndUpdate(
-      userId, // this is the ID filter
+      { _id: userId },
       { name, about },
       {
         new: true,
@@ -93,7 +93,7 @@ module.exports.patchAvatar = async (req, res, next) => {
     const userId = req.user._id;
 
     const user = await User.findOneAndUpdate(
-      userId, // this is the ID filter
+      { _id: userId },
       { avatar },
       {
         new: true,
